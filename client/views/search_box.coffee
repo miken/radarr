@@ -23,8 +23,9 @@ loadStationFromLoc = (loc) ->
         # Parse description from desc
         descriptionStringResult = descriptionStringRegex.exec s.desc
         if descriptionStringResult
-          # The 0th element gives the result with the space
-          # The 1st element gives the result without the space
+          # The 0th element gives the result with the space, i.e. ' - Station Name'
+          # The 1st element gives the result without the space, i.e. 'Station Name'
+          # So pick the 1st element
           descriptionString = descriptionStringResult[1]
 
         # Pick out selected properties from s
@@ -36,6 +37,9 @@ loadStationFromLoc = (loc) ->
         )
 
         Stations.insert(newStation)
+
+    # Once all stations are loaded, route to stationList to display
+    Router.go('stationList')
 
 Template.searchBox.events
   'submit form': (e) ->

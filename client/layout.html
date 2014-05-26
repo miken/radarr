@@ -1,0 +1,17 @@
+<template name="layout">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+        {{> hello}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="hello">
+  <div class="text-center">
+    <img class="emoji" src="/radio.png"><span class="title">radarr</span>
+  </div>
+  {{> searchBox}}
+  {{> yield}}
+</template>
