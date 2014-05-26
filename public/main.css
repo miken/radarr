@@ -3,8 +3,13 @@
   font-weight: 400;
   font-size: 400%;
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 30px;
   line-height: 0.8;
+  color: #c7a45f;
+}
+
+.title:hover {
+  color: #ac8443;
 }
 
 h1, h2, h3, h4, h5, h6, ul, input {

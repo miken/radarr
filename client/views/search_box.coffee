@@ -50,3 +50,15 @@ Template.searchBox.events
 
     # Use this to call API and reload Station
     loadStationFromLoc loc
+
+Template.searchBox.helpers
+  ziptest: () ->
+    Meteor.call "convertAddressToZip", (error, results) ->
+      if error
+        console.log error
+      else
+        response = results.data[0]
+        # We'll pick out the first object from the zipcodes property
+        zipObject = response.zipcodes[0]
+        Session.set 'zip', zipObject.zipcode
+    Session.get 'zip'

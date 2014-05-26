@@ -3,7 +3,8 @@
   "dependencies": {
     "basePackages": {
       "bootstrap-3": {},
-      "iron-router": {}
+      "iron-router": {},
+      "wait-on-lib": {}
     },
     "packages": {
       "bootstrap-3": {
@@ -15,6 +16,11 @@
         "git": "https://github.com/EventedMind/iron-router.git",
         "tag": "v0.7.1",
         "commit": "d1ffb3f06ea4c112132b030f2eb1a70b81675ecb"
+      },
+      "wait-on-lib": {
+        "git": "https://github.com/DerMambo/wait-on-lib.git",
+        "tag": "v0.0.3",
+        "commit": "ee83a431019b59c341903c3f732ff3d8d038a8ce"
       },
       "blaze-layout": {
         "git": "https://github.com/EventedMind/blaze-layout.git",

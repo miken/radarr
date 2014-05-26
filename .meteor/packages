@@ -10,3 +10,4 @@ coffeescript
 bootstrap-3
 http
 iron-router
+wait-on-lib

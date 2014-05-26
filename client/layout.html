@@ -10,7 +10,9 @@
 
 <template name="hello">
   <div class="text-center">
-    <img class="emoji" src="/radio.png"><span class="title">radarr</span>
+    <a href="{{pathFor 'welcome'}}">
+      <img class="emoji" src="/radio.png"><span class="title">radarr</span>
+    </a>
   </div>
   {{> searchBox}}
   {{> yield}}
