@@ -2,6 +2,9 @@
   font-family: 'Orbitron', sans-serif;
   font-weight: 400;
   font-size: 400%;
+  display: inline-block;
+  margin-top: 20px;
+  line-height: 0.8;
 }
 
 h1, h2, h3, h4, h5, h6, ul {
@@ -15,8 +18,13 @@ p {
 }
 
 .emoji {
-  width: 3em;
-  height: 3em;
+  width: 3.5em;
+  height: 3.5em;
   display: inline-block;
-  margin-bottom: 2em;
+  margin-bottom: 2.4em;
+}
+
+/* Use the following properties to fix the search icon sizing */
+.btn-lg, .btn-group-lg > .btn {
+  line-height: 1.34;
 }
