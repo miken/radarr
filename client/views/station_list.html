@@ -1,0 +1,29 @@
+<template name="stationList">
+  <!-- Nav pills -->
+  <p>
+    <ul class="nav nav-pills">
+      <li class="active"><a href="#fm" data-toggle="pill">FM Stations</a></li>
+      <li><a href="#am" data-toggle="pill">AM Stations</a></li>
+    </ul>
+  </p>
+
+
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="fm">
+      <div class="list-group">
+        {{#each fmStations}}
+          {{> station}}
+        {{/each}}        
+      </div>
+    </div>
+    <div class="tab-pane" id="am">
+      <div class="list-group">
+        {{#each amStations}}
+          {{> station}}
+        {{/each}}        
+      </div>
+    </div>
+  </div>
+</template>

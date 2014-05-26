@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>radarr</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+        {{> hello}}
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<template name="hello">
+  <h1>radarr</h1>
+  <p>
+    {{> stationList}}
+  </p>
+</template>
