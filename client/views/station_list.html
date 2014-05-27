@@ -1,13 +1,13 @@
 <template name="stationList">
   <!-- Nav pills -->
-  <p>
-    <ul class="nav nav-pills">
-      <li class="active"><a href="#fm" data-toggle="pill">FM Stations</a></li>
-      <li><a href="#am" data-toggle="pill">AM Stations</a></li>
-    </ul>
-  </p>
-
-
+  {{#if fmStations}}
+    <p class="navpills">
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#fm" data-toggle="pill">FM Stations</a></li>
+        <li><a href="#am" data-toggle="pill">AM Stations</a></li>
+      </ul>
+    </p>
+  {{/if}}
 
 
   <!-- Tab panes -->

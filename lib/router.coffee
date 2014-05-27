@@ -2,15 +2,24 @@ Router.configure
   layoutTemplate: "layout"
   loadingTemplate: "loading"
   waitOn: ->
-    IRLibLoader.load("/jquery.liveaddress.js")
+    IRLibLoader.load("/liveaddress.min.js")
 
 Router.map ->
   @route "welcome",
     path: "/"
 
+  @route "loading",
+    path: "/pleasewait"
+
+  @route "tryAgain",
+    path: "/tryagain"
+
+  @route "noStations",
+    path: "/nostations"
+
   @route "stationList",
     path: "/search"
-    waitOn: ->
-      # Check if Station list if empty, if so, go to welcome page
-      if Stations.find().count() == 0
-        Router.go('welcome')
+
+Router.onBeforeAction "loading"
+Router.onBeforeAction ->
+   clearErrors()

@@ -35,7 +35,16 @@ p {
   margin-bottom: 2.4em;
 }
 
+.spinner {
+  position: relative;
+  top: -70px;
+}
+
+.navpills {
+  margin: 10px 0px 10px 0px;
+}
+
 /* Use the following properties to fix the search icon sizing */
 .btn-lg, .btn-group-lg > .btn {
-  line-height: 1.34;
+  line-height: 1.38;
 }
