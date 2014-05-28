@@ -10,3 +10,7 @@ Template.stationList.helpers
     Stations.find {band: "AM"},
       sort:
         ["frequency", "name"]
+
+  atLeastOneStation: ->
+    count = Stations.find().count()
+    count > 0

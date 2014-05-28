@@ -7,8 +7,9 @@ standard-app-packages
 autopublish
 insecure
 coffeescript
-bootstrap-3
 http
 iron-router
 wait-on-lib
 spin
+less
+less-bootstrap-3
