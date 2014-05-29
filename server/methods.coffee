@@ -5,6 +5,8 @@ getSSToken = () ->
     token = "4954915183782114106"
   else if fullUrl.indexOf("meteor.com") > -1
     token = "4954915181771352772"
+  else if fullUrl.indexOf("herokuapp.com") > -1
+    token = "4954915182924730750"
   if token
     return token
   else
