@@ -13,4 +13,7 @@ Template.stationList.helpers
 
   atLeastOneStation: ->
     count = Stations.find().count()
-    count > 0
+    if count > 0
+      count
+    else
+      Router.go "welcome"

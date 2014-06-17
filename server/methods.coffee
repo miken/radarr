@@ -1,17 +1,3 @@
-getSSToken = () ->
-  # Token will change depending on hostname
-  fullUrl = Meteor.absoluteUrl()
-  if fullUrl.indexOf("localhost") > -1
-    token = "4954915183782114106"
-  else if fullUrl.indexOf("meteor.com") > -1
-    token = "4954915181771352772"
-  else if fullUrl.indexOf("herokuapp.com") > -1
-    token = "4954915182924730750"
-  if token
-    return token
-  else
-    throw new Meteor.Error 422, "Unauthorized token. Please check your Smarty Streets account for tokens."
-
 if Meteor.isServer
   Meteor.methods
     getStationFromYes: (zipCode) ->
@@ -19,7 +5,16 @@ if Meteor.isServer
       HTTP.get(yesApiUrl)
 
     convertAddressToZip: (city, state) ->
-      token = getSSToken()
+      # Token will change depending on hostname
+      fullUrl = Meteor.absoluteUrl()
+      if fullUrl.indexOf("localhost") > -1
+        token = Meteor.settings.keys.smarty_streets.localhost
+      else if fullUrl.indexOf("meteor.com") > -1
+        token = Meteor.settings.keys.smarty_streets.meteor
+      else if fullUrl.indexOf("herokuapp.com") > -1
+        token = Meteor.settings.keys.smarty_streets.heroku
+      else
+        throw new Meteor.Error 422, "Unauthorized token. Please check your Smarty Streets account for tokens."
       SmartyStreetsApiUrl = "https://api.smartystreets.com/zipcode?auth-token=#{token}&city=#{city}&state=#{state}"
       HTTP.get(SmartyStreetsApiUrl)
 
@@ -56,3 +51,11 @@ if Meteor.isServer
       # Else raise an error
       else
         throw new Meteor.Error 404, "Not a valid location."
+
+    convertLatLngToZip: (coords) ->
+      # This method uses Google Geocoding API to convert coordinates
+      # into zip code for station lookup after
+      apiKey = Meteor.settings.keys.google_api
+      geocodeUrl = "https://maps.googleapis.com/maps/api/geocode/json?latlng=#{coords}&key=#{apiKey}&result_type=postal_code"
+      response = HTTP.get(geocodeUrl)
+      response
