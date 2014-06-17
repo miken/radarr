@@ -6,6 +6,7 @@
       </div>
     </div>
   </div>
+  {{> footer}}
 </template>
 
 <template name="hello">
@@ -19,4 +20,12 @@
   </div>
   {{> searchBox}}
   {{> yield}}
+</template>
+
+<template name="footer">
+  <div id="footer">
+    <div class="container text-center">
+      <p>Developed by <a href="//github.com/miken">Mike Nguyen</a></p>
+    </div>
+  </div>
 </template>
